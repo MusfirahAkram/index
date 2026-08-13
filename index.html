@@ -291,103 +291,6 @@
             50% { transform: translateY(-12px); }
         }
 
-        /* Full Width Video Showcase Section */
-        .video-section-fullwidth {
-            width: 100vw;
-            margin-left: calc(-50vw + 50%);
-            padding: 4rem 0 0 0;
-            background: #FFFFFF;
-            position: relative;
-            overflow: hidden;
-            border-top: 1px solid #E2E8F0;
-            border-bottom: 1px solid #E2E8F0;
-        }
-
-        .video-section-header {
-            text-align: center;
-            padding: 0 8% 2rem 8%;
-            color: var(--dark);
-        }
-
-        .video-section-header h2 {
-            font-size: clamp(1.8rem, 3.5vw, 2.3rem);
-            color: var(--dark);
-        }
-
-        .video-section-header p {
-            color: var(--primary);
-            font-weight: 600;
-            margin-top: 0.5rem;
-        }
-
-        .fullwidth-video-wrapper {
-            position: relative;
-            width: 100%;
-            max-height: 80vh;
-            background: #FFFFFF;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-        }
-
-        .fullwidth-video-wrapper video {
-            width: 100%;
-            height: 100%;
-            max-height: 80vh;
-            object-fit: cover;
-            display: block;
-        }
-
-        .video-overlay-bar {
-            background: #F8FAFC;
-            padding: 1.5rem 8%;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            flex-wrap: wrap;
-            gap: 1.2rem;
-            border-top: 1px solid #E2E8F0;
-        }
-
-        .video-overlay-info h3 {
-            font-size: 1.35rem;
-            color: var(--dark);
-            margin-bottom: 0.3rem;
-            display: flex;
-            align-items: center;
-            gap: 0.6rem;
-        }
-
-        .video-overlay-info h3 i {
-            color: var(--primary);
-        }
-
-        .video-overlay-info p {
-            color: #64748B;
-            font-size: 0.95rem;
-        }
-
-        .sound-toggle-btn {
-            background: #FFFFFF;
-            color: var(--dark);
-            border: 1px solid #CBD5E1;
-            padding: 0.6rem 1.2rem;
-            border-radius: 30px;
-            cursor: pointer;
-            font-weight: 600;
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            gap: 0.5rem;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.05);
-            transition: all 0.3s;
-        }
-
-        .sound-toggle-btn:hover {
-            background: #F1F5F9;
-            border-color: var(--primary);
-            color: var(--primary);
-        }
 
         /* Programs Section */
         .section {
@@ -1044,7 +947,7 @@
         
         <ul class="nav-links" id="navLinks">
             <li><a href="#about" onclick="closeMobileMenu()"><i class="fa-solid fa-user-check"></i> About</a></li>
-            <li><a href="#video-showcase" onclick="closeMobileMenu()"><i class="fa-solid fa-circle-play"></i> Featured Video</a></li>
+          
             <li><a href="#programs" onclick="closeMobileMenu()"><i class="fa-solid fa-graduation-cap"></i> Courses & Programs</a></li>
             <li><a href="#testimonials" onclick="closeMobileMenu()"><i class="fa-solid fa-star"></i> Testimonials</a></li>
             <li><a href="#forms" onclick="closeMobileMenu()"><i class="fa-solid fa-file-signature"></i> Register</a></li>
@@ -1120,7 +1023,7 @@
             <!-- Wisdom Weavers -->
             <div class="program-card" onclick="openModal('wisdom-weavers')">
                 <div class="card-img-container">
-                    <img src="https://lh3.googleusercontent.com/pw/AP1GczNtANnkHMGzKV_GwR2P_jPxpZuvXQxyTMNcT509SHA66Pfcb2FJ4znHR9BuD_1sAvHNWlWjlXA9W6VBQq87zCeFU4osq7VzyLKlDAVRm-33djt6tptP6ZeelDVqox0PY86dZ32vGqEDI1_WDiZ1Nz8I=w493-h739-s-no-gm?authuser=0" alt="Wisdom Weavers Poster">
+                    <img src="https://i.ibb.co/LDFfD963/Gemini-Generated-Image-xr3zvdxr3zvdxr3z.png" alt="Wisdom Weavers Poster">
                     <div class="card-img-overlay"></div>
                     <span class="card-tag-badge">Ages 6–12</span>
                 </div>
@@ -1133,7 +1036,7 @@
             <!-- Parenting Strategist Tab -->
             <div class="program-card" onclick="openModal('parenting')">
                 <div class="card-img-container">
-                    <img src="https://images.unsplash.com/photo-1543269865-cbf427effbad?auto=format&fit=crop&q=80&w=800" alt="Parenting Strategy">
+                    <img src="https://img-cdn.publive.online/fit-in/1200x675/filters:format(webp)/english-betterindia/media/post_attachments/uploads/2024/06/Untitled-design_11zon-1-1719403149.jpg" alt="Parenting Strategy">
                     <div class="card-img-overlay"></div>
                     <span class="card-tag-badge">Parenting</span>
                 </div>
@@ -1146,7 +1049,7 @@
             <!-- Homeschooling Tab -->
             <div class="program-card" onclick="openModal('homeschooling')">
                 <div class="card-img-container">
-                    <img src="https://images.unsplash.com/photo-1503676260728-1c00da094a0b?auto=format&fit=crop&q=80&w=800" alt="Homeschooling Mentorship">
+                    <img src="https://nooracademy.com/wp-content/uploads/2026/03/Generated-Image-March-24-2026-5_59PM.jpg" alt="Homeschooling Mentorship">
                     <div class="card-img-overlay"></div>
                     <span class="card-tag-badge">Homeschooling</span>
                 </div>
@@ -1159,7 +1062,7 @@
             <!-- 1-on-1 Sessions -->
             <div class="program-card" onclick="openModal('one-on-one')">
                 <div class="card-img-container">
-                    <img src="https://i.ibb.co/P0Dn7vD/1000384494.jpg" alt="1-on-1 Coaching Session">
+                    <img src="https://static.wixstatic.com/media/11062b_99e3fc8419874878897f62a06719a04a~mv2.jpeg/v1/fill/w_6124,h_4082,al_c,q_90,usm_0.66_1.00_0.01,enc_auto/11062b_99e3fc8419874878897f62a06719a04a~mv2.jpeg" alt="1-on-1 Coaching Session">
                     <div class="card-img-overlay"></div>
                     <span class="card-tag-badge">1-on-1 Consultation</span>
                 </div>
@@ -1172,7 +1075,7 @@
             <!-- Kirdar -->
             <div class="program-card" onclick="openModal('kirdar')">
                 <div class="card-img-container">
-                    <img src="https://lh3.googleusercontent.com/pw/AP1GczMc04vgBpCsFcs1LQnoITv5HxeNAXJBN6F5O6QsCqK7TCts4dgCprFuKCMwcC_Qw8xKy0W2BsBPP6G7rtZmwsNzEu3UfDNR3TZO0stwxZDaW27oerieyHOEBYX55HuSf2rjqBffRoA3KCiQuClDXNoe=w493-h739-s-no-gm?authuser=0" alt="The Mirror Within - Kirdar Poster">
+                    <img src="https://miro.medium.com/v2/resize:fit:720/format:webp/1*TSJ5NlQ3Y7e-HrrowHQFiQ.png" alt="The Mirror Within - Kirdar Poster">
                     <div class="card-img-overlay"></div>
                     <span class="card-tag-badge">Transformation</span>
                 </div>
@@ -1185,7 +1088,7 @@
             <!-- Ramadan Series -->
             <div class="program-card" onclick="openModal('ramadan-series')">
                 <div class="card-img-container">
-                    <img src="https://images.unsplash.com/photo-1564769625905-50e93615e769?auto=format&fit=crop&q=80&w=800" alt="Ramadan Learning Series">
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRjHCZ9XAUrCguX3mOeIR75Uq6BIkE5BLHZJUPBcbyeJqcW0rIOJwegYyY&s=10" alt="Ramadan Learning Series">
                     <div class="card-img-overlay"></div>
                     <span class="card-tag-badge">Interactive Series</span>
                 </div>
@@ -1528,8 +1431,8 @@
             'wisdom-weavers': {
                 title: 'Wisdom Weavers (Integrated Learning Through Quran)',
                 tag: 'Age Group: 6–12 Years',
-                img: 'https://lh3.googleusercontent.com/pw/AP1GczNtANnkHMGzKV_GwR2P_jPxpZuvXQxyTMNcT509SHA66Pfcb2FJ4znHR9BuD_1sAvHNWlWjlXA9W6VBQq87zCeFU4osq7VzyLKlDAVRm-33djt6tptP6ZeelDVqox0PY86dZ32vGqEDI1_WDiZ1Nz8I=w493-h739-s-no-gm?authuser=0',
-                meta: '<strong>Actual Fee:</strong> RS 15,000 | <strong>Discounted Fee:</strong> RS 10,000 / month | <strong>Schedule:</strong> Tuesdays & Thursdays',
+                img: 'https://i.ibb.co/LDFfD963/Gemini-Generated-Image-xr3zvdxr3zvdxr3z.png',
+                meta: '<strong>Actual Fee:</strong> $36 | <strong>Discounted Fee:</strong> $30 / month | <strong>Schedule:</strong> Tuesdays & Thursdays',
                 description: 'An integrated learning experience linking core subjects to Quranic principles, helping children develop strong character and wise decision-making.',
                 highlights: [
                     'Science from Quran: Relating scientific concepts with Quranic verses.',
@@ -1542,7 +1445,7 @@
             'parenting': {
                 title: 'Parenting & Connection Strategy',
                 tag: 'Parenting Workshop & Mentorship',
-                img: 'https://images.unsplash.com/photo-1543269865-cbf427effbad?auto=format&fit=crop&q=80&w=800',
+                img: 'https://img-cdn.publive.online/fit-in/1200x675/filters:format(webp)/english-betterindia/media/post_attachments/uploads/2024/06/Untitled-design_11zon-1-1719403149.jpg',
                 meta: '<strong>Specialist:</strong> Mindframe & Parenting Strategist | <strong>Format:</strong> Group & 1:1',
                 description: 'Empowering parents with effective tools to nurture emotional intelligence, build mutual trust, and resolve conflicts calmly.',
                 highlights: [
@@ -1554,7 +1457,7 @@
             'homeschooling': {
                 title: 'Homeschooling Mentorship & Strategy',
                 tag: 'Homeschooling Guidance',
-                img: 'https://images.unsplash.com/photo-1503676260728-1c00da094a0b?auto=format&fit=crop&q=80&w=800',
+                img: 'https://nooracademy.com/wp-content/uploads/2026/03/Generated-Image-March-24-2026-5_59PM.jpg',
                 meta: '<strong>Specialist:</strong> Homeschooling Mama & Educator',
                 description: 'Step-by-step guidance for mothers who want to start or structure their homeschooling journey with clarity and confidence.',
                 highlights: [
@@ -1566,8 +1469,8 @@
             'one-on-one': {
                 title: '1-on-1 Consultation Sessions',
                 tag: 'Personalized Coaching',
-                img: 'https://i.ibb.co/P0Dn7vD/1000384494.jpg',
-                meta: '<strong>Consultation Fee:</strong> RS 7,500 / Session',
+                img: 'https://static.wixstatic.com/media/11062b_99e3fc8419874878897f62a06719a04a~mv2.jpeg/v1/fill/w_6124,h_4082,al_c,q_90,usm_0.66_1.00_0.01,enc_auto/11062b_99e3fc8419874878897f62a06719a04a~mv2.jpeg',
+                meta: '<strong>Consultation Fee:</strong> $30 / Session',
                 description: 'Tailored individual coaching sessions providing direct guidance and safe space to heal, re-align, and navigate life challenges.',
                 highlights: [
                     'Mindframe Reset & Belief Transformation.',
@@ -1578,8 +1481,8 @@
             'kirdar': {
                 title: 'KIRDAR - The Mirror Within',
                 tag: 'Belief Transformation Program',
-                img: 'https://lh3.googleusercontent.com/pw/AP1GczMc04vgBpCsFcs1LQnoITv5HxeNAXJBN6F5O6QsCqK7TCts4dgCprFuKCMwcC_Qw8xKy0W2BsBPP6G7rtZmwsNzEu3UfDNR3TZO0stwxZDaW27oerieyHOEBYX55HuSf2rjqBffRoA3KCiQuClDXNoe=w493-h739-s-no-gm?authuser=0',
-                meta: '<strong>Discounted Price:</strong> RS 8,000 (Actual: RS 12,000)',
+                img: 'https://miro.medium.com/v2/resize:fit:720/format:webp/1*TSJ5NlQ3Y7e-HrrowHQFiQ.png',
+                meta: '<strong>Discounted Price:</strong> $30 (Actual: $36)',
                 description: 'A transformative course designed by Musfirah Akram to help individuals challenge limiting beliefs and build unshakeable character (Kirdar).',
                 highlights: [
                     'Intentions, Thoughts, Actions, Habits, Character framework.',
@@ -1590,7 +1493,7 @@
             'ramadan-series': {
                 title: 'Ramadhan: A Month of Hidayah & Furqaan',
                 tag: 'Spiritual & Educational Series',
-                img: 'https://images.unsplash.com/photo-1564769625905-50e93615e769?auto=format&fit=crop&q=80&w=800',
+                img: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRjHCZ9XAUrCguX3mOeIR75Uq6BIkE5BLHZJUPBcbyeJqcW0rIOJwegYyY&s=10',
                 meta: '<strong>Format:</strong> Interactive Workshops & Games',
                 description: 'A dedicated series designed to help children and families understand the essence of Ramadan through interactive learning.',
                 highlights: [
