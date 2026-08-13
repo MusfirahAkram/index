@@ -1,0 +1,1637 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Coach Musfirah Akram | Mindframe & Parenting Strategist</title>
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <style>
+        :root {
+            --primary: #6C5CE7;
+            --primary-dark: #4834D4;
+            --secondary: #A29BFE;
+            --accent: #FD79A8;
+            --dark: #0F172A;
+            --light: #F8FAFC;
+            --card-bg: #FFFFFF;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Plus Jakarta Sans', sans-serif;
+        }
+
+        body {
+            background-color: var(--light);
+            color: var(--dark);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        /* Navigation */
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0.8rem 8%;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(12px);
+            z-index: 1000;
+            border-bottom: 1px solid rgba(0,0,0,0.05);
+        }
+
+        .logo-container {
+            display: flex;
+            align-items: center;
+            gap: 0.8rem;
+            text-decoration: none;
+        }
+
+        .logo-img {
+            height: 48px;
+            width: auto;
+            object-fit: contain;
+        }
+
+        .logo-text {
+            font-weight: 700;
+            font-size: 1.25rem;
+            color: var(--primary-dark);
+            text-decoration: none;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 1.8rem;
+            list-style: none;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--dark);
+            font-weight: 600;
+            transition: color 0.3s;
+            font-size: 0.95rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .nav-links a i {
+            display: none;
+        }
+
+        .nav-links a:hover {
+            color: var(--primary);
+        }
+
+        .btn {
+            background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+            color: white;
+            padding: 0.7rem 1.5rem;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            box-shadow: 0 4px 15px rgba(108, 92, 231, 0.3);
+            transition: transform 0.3s, box-shadow 0.3s;
+            cursor: pointer;
+            border: none;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.5rem;
+            text-align: center;
+        }
+
+        .btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(108, 92, 231, 0.4);
+        }
+
+        /* Responsive Mobile Menu Toggle Button */
+        .mobile-menu-btn {
+            display: none;
+            background: transparent;
+            border: none;
+            font-size: 1.5rem;
+            color: var(--dark);
+            cursor: pointer;
+            padding: 0.4rem;
+            z-index: 1002;
+        }
+
+        .nav-overlay {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100vh;
+            background: rgba(15, 23, 42, 0.4);
+            backdrop-filter: blur(4px);
+            z-index: 998;
+        }
+
+        .nav-overlay.active {
+            display: block;
+        }
+
+        /* Hero Section */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            padding: 6rem 8% 2rem 8%;
+            position: relative;
+            background: radial-gradient(circle at 80% 20%, #f1f0ff 0%, #f8fafc 60%);
+            gap: 3rem;
+        }
+
+        .hero-content {
+            flex: 1;
+            max-width: 600px;
+            z-index: 2;
+        }
+
+        .badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            background: rgba(108, 92, 231, 0.1);
+            color: var(--primary);
+            padding: 0.4rem 1rem;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+        }
+
+        .hero h1 {
+            font-size: clamp(2rem, 4vw, 2.8rem);
+            line-height: 1.2;
+            margin-bottom: 0.5rem;
+            background: linear-gradient(135deg, var(--dark), var(--primary-dark));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .hero h2 {
+            font-size: clamp(1.1rem, 2.5vw, 1.3rem);
+            color: var(--primary);
+            margin-bottom: 1rem;
+            font-weight: 600;
+        }
+
+        .hero p {
+            font-size: 1rem;
+            color: #64748B;
+            margin-bottom: 1.5rem;
+        }
+
+        .credentials-pills {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            margin-bottom: 2rem;
+        }
+
+        .pill {
+            background: white;
+            border: 1px solid #E2E8F0;
+            padding: 0.3rem 0.8rem;
+            border-radius: 12px;
+            font-size: 0.85rem;
+            color: #475569;
+            font-weight: 600;
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+        }
+
+        .hero-image-container {
+            flex: 1;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+            width: 100%;
+        }
+
+        .interactive-hero-img-wrapper {
+            position: relative;
+            width: 100%;
+            max-width: 420px;
+            border-radius: 24px;
+            overflow: hidden;
+            box-shadow: 0 20px 40px rgba(108, 92, 231, 0.2);
+            transition: transform 0.5s ease, box-shadow 0.5s ease;
+            animation: floatImage 6s ease-in-out infinite;
+            background: #ffffff;
+        }
+
+        .interactive-hero-img-wrapper:hover {
+            transform: translateY(-10px) scale(1.02);
+            box-shadow: 0 30px 60px rgba(108, 92, 231, 0.3);
+        }
+
+        .interactive-hero-img-wrapper img {
+            width: 100%;
+            height: auto;
+            max-height: 460px;
+            object-fit: cover;
+            display: block;
+            transition: transform 0.6s ease;
+        }
+
+        .interactive-hero-img-wrapper:hover img {
+            transform: scale(1.08);
+        }
+
+        .hero-img-badge {
+            position: absolute;
+            bottom: 1.2rem;
+            left: 1.2rem;
+            right: 1.2rem;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            padding: 0.9rem 1.2rem;
+            border-radius: 16px;
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+        }
+
+        .hero-img-badge i {
+            font-size: 1.8rem;
+            color: var(--primary);
+        }
+
+        .hero-img-badge-text {
+            font-size: 0.85rem;
+            color: var(--dark);
+            font-weight: 600;
+            line-height: 1.3;
+        }
+
+        @keyframes floatImage {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-12px); }
+        }
+
+        /* Full Width Video Showcase Section */
+        .video-section-fullwidth {
+            width: 100vw;
+            margin-left: calc(-50vw + 50%);
+            padding: 4rem 0 0 0;
+            background: #FFFFFF;
+            position: relative;
+            overflow: hidden;
+            border-top: 1px solid #E2E8F0;
+            border-bottom: 1px solid #E2E8F0;
+        }
+
+        .video-section-header {
+            text-align: center;
+            padding: 0 8% 2rem 8%;
+            color: var(--dark);
+        }
+
+        .video-section-header h2 {
+            font-size: clamp(1.8rem, 3.5vw, 2.3rem);
+            color: var(--dark);
+        }
+
+        .video-section-header p {
+            color: var(--primary);
+            font-weight: 600;
+            margin-top: 0.5rem;
+        }
+
+        .fullwidth-video-wrapper {
+            position: relative;
+            width: 100%;
+            max-height: 80vh;
+            background: #FFFFFF;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .fullwidth-video-wrapper video {
+            width: 100%;
+            height: 100%;
+            max-height: 80vh;
+            object-fit: cover;
+            display: block;
+        }
+
+        .video-overlay-bar {
+            background: #F8FAFC;
+            padding: 1.5rem 8%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 1.2rem;
+            border-top: 1px solid #E2E8F0;
+        }
+
+        .video-overlay-info h3 {
+            font-size: 1.35rem;
+            color: var(--dark);
+            margin-bottom: 0.3rem;
+            display: flex;
+            align-items: center;
+            gap: 0.6rem;
+        }
+
+        .video-overlay-info h3 i {
+            color: var(--primary);
+        }
+
+        .video-overlay-info p {
+            color: #64748B;
+            font-size: 0.95rem;
+        }
+
+        .sound-toggle-btn {
+            background: #FFFFFF;
+            color: var(--dark);
+            border: 1px solid #CBD5E1;
+            padding: 0.6rem 1.2rem;
+            border-radius: 30px;
+            cursor: pointer;
+            font-weight: 600;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.5rem;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+            transition: all 0.3s;
+        }
+
+        .sound-toggle-btn:hover {
+            background: #F1F5F9;
+            border-color: var(--primary);
+            color: var(--primary);
+        }
+
+        /* Programs Section */
+        .section {
+            padding: 5rem 8%;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 3.5rem;
+        }
+
+        .section-title h2 {
+            font-size: clamp(1.8rem, 3.5vw, 2.3rem);
+            color: var(--dark);
+        }
+
+        .section-title p {
+            color: #64748B;
+            margin-top: 0.5rem;
+        }
+
+        .programs-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+        }
+
+        .program-card {
+            background: var(--card-bg);
+            border-radius: 20px;
+            padding: 1.5rem;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.03);
+            border: 1px solid rgba(0,0,0,0.05);
+            transition: transform 0.3s, box-shadow 0.3s;
+            cursor: pointer;
+            position: relative;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .program-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 15px 35px rgba(108, 92, 231, 0.15);
+        }
+
+        .program-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 4px;
+            background: linear-gradient(90deg, var(--primary), var(--accent));
+        }
+
+        .card-img-container {
+            width: 100%;
+            height: 220px;
+            border-radius: 14px;
+            margin-bottom: 1.2rem;
+            overflow: hidden;
+            position: relative;
+            background: #f1f5f9;
+        }
+
+        .card-img-container img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: top center;
+            transition: transform 0.5s ease;
+        }
+
+        .program-card:hover .card-img-container img {
+            transform: scale(1.08);
+        }
+
+        .card-img-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(to top, rgba(15, 23, 42, 0.5), transparent);
+            opacity: 0.3;
+            transition: opacity 0.3s;
+        }
+
+        .program-card:hover .card-img-overlay {
+            opacity: 0.5;
+        }
+
+        .card-tag-badge {
+            position: absolute;
+            top: 0.8rem;
+            right: 0.8rem;
+            background: rgba(255, 255, 255, 0.95);
+            color: var(--primary-dark);
+            padding: 0.3rem 0.75rem;
+            border-radius: 20px;
+            font-size: 0.75rem;
+            font-weight: 700;
+            backdrop-filter: blur(4px);
+        }
+
+        .program-card h3 {
+            font-size: 1.25rem;
+            margin-bottom: 0.5rem;
+            color: var(--dark);
+        }
+
+        .price-tag {
+            font-weight: 700;
+            color: var(--primary-dark);
+            margin-bottom: 0.8rem;
+            font-size: 0.95rem;
+        }
+
+        .program-card p {
+            color: #64748B;
+            font-size: 0.9rem;
+            margin-bottom: 1.5rem;
+            flex-grow: 1;
+        }
+
+        .click-hint {
+            color: var(--primary);
+            font-weight: 600;
+            font-size: 0.85rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        /* Testimonials Section */
+        .testimonials-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .testimonial-card {
+            background: var(--card-bg);
+            border-radius: 24px;
+            padding: 2rem;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.03);
+            border: 1px solid rgba(108, 92, 231, 0.08);
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            position: relative;
+            transition: all 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+            overflow: hidden;
+        }
+
+        .testimonial-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 5px;
+            background: linear-gradient(90deg, var(--primary), var(--secondary));
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .testimonial-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 40px rgba(108, 92, 231, 0.12);
+            border-color: rgba(108, 92, 231, 0.25);
+        }
+
+        .testimonial-card:hover::before {
+            opacity: 1;
+        }
+
+        .quote-icon {
+            font-size: 1.8rem;
+            color: var(--primary);
+            opacity: 0.3;
+            margin-bottom: 1rem;
+            transition: transform 0.3s ease, opacity 0.3s ease;
+        }
+
+        .testimonial-card:hover .quote-icon {
+            transform: scale(1.15) rotate(-5deg);
+            opacity: 0.8;
+        }
+
+        .rating-stars {
+            color: #FFB800;
+            font-size: 0.85rem;
+            margin-bottom: 0.8rem;
+            display: flex;
+            gap: 0.2rem;
+        }
+
+        .testimonial-text {
+            font-size: 0.95rem;
+            color: #334155;
+            line-height: 1.65;
+            margin-bottom: 1.5rem;
+        }
+
+        .testimonial-author {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            padding-top: 1rem;
+            border-top: 1px solid #F1F5F9;
+        }
+
+        .author-avatar {
+            width: 44px;
+            height: 44px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            font-size: 1rem;
+            box-shadow: 0 4px 10px rgba(108, 92, 231, 0.25);
+            flex-shrink: 0;
+        }
+
+        .author-info h4 {
+            font-size: 0.95rem;
+            color: var(--dark);
+            font-weight: 700;
+        }
+
+        .author-info span {
+            font-size: 0.8rem;
+            color: #64748B;
+        }
+
+        /* Modal Styles */
+        .modal-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(15, 23, 42, 0.6);
+            backdrop-filter: blur(5px);
+            display: none;
+            justify-content: center;
+            align-items: center;
+            z-index: 2000;
+            padding: 1rem;
+        }
+
+        .modal-content {
+            background: white;
+            border-radius: 24px;
+            max-width: 650px;
+            width: 100%;
+            max-height: 90vh;
+            overflow-y: auto;
+            padding: 2.2rem;
+            position: relative;
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+            animation: modalFadeIn 0.3s ease-out;
+        }
+
+        @keyframes modalFadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .close-modal {
+            position: absolute;
+            top: 1.2rem;
+            right: 1.2rem;
+            background: #F1F5F9;
+            border: none;
+            width: 36px;
+            height: 36px;
+            border-radius: 50%;
+            font-size: 1.1rem;
+            cursor: pointer;
+            color: #64748B;
+            transition: background 0.2s;
+            z-index: 10;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .close-modal:hover {
+            background: #E2E8F0;
+            color: var(--dark);
+        }
+
+        .modal-header-img {
+            width: 100%;
+            max-height: 280px;
+            border-radius: 16px;
+            overflow: hidden;
+            margin-bottom: 1.5rem;
+            background: #F8FAFC;
+        }
+
+        .modal-header-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+        }
+
+        .modal-header {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            margin-bottom: 1.2rem;
+        }
+
+        .modal-body h4 {
+            margin-top: 1.2rem;
+            margin-bottom: 0.5rem;
+            color: var(--dark);
+        }
+
+        .modal-body ul {
+            margin-left: 1.2rem;
+            color: #475569;
+            margin-bottom: 1.5rem;
+        }
+
+        .modal-body ul li {
+            margin-bottom: 0.4rem;
+        }
+
+        .meta-box {
+            background: #F8FAFC;
+            padding: 1rem;
+            border-radius: 12px;
+            border: 1px solid #E2E8F0;
+            margin-bottom: 1.5rem;
+            font-size: 0.9rem;
+            color: #334155;
+        }
+
+        /* Registration Forms Section */
+        .forms-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1.5rem;
+            margin-top: 2rem;
+        }
+
+        .form-card {
+            background: var(--card-bg);
+            border-radius: 16px;
+            padding: 1.8rem;
+            border: 1px solid rgba(0,0,0,0.08);
+            box-shadow: 0 4px 15px rgba(0,0,0,0.03);
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .form-card-badge {
+            display: inline-block;
+            background: rgba(108, 92, 231, 0.1);
+            color: var(--primary);
+            padding: 0.2rem 0.6rem;
+            border-radius: 6px;
+            font-size: 0.75rem;
+            font-weight: 700;
+            margin-bottom: 0.6rem;
+        }
+
+        .form-card h3 {
+            font-size: 1.15rem;
+            margin-bottom: 0.5rem;
+            color: var(--dark);
+        }
+
+        .form-card p {
+            color: #64748B;
+            font-size: 0.88rem;
+            margin-bottom: 1.5rem;
+        }
+
+        /* Social Media Section */
+        .social-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1.5rem;
+            margin-top: 2rem;
+        }
+
+        .social-card {
+            background: var(--card-bg);
+            border-radius: 16px;
+            padding: 1.5rem;
+            border: 1px solid rgba(0,0,0,0.08);
+            display: flex;
+            align-items: center;
+            gap: 1.2rem;
+            text-decoration: none;
+            color: var(--dark);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .social-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+        }
+
+        .social-icon {
+            width: 50px;
+            height: 50px;
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            color: white;
+            flex-shrink: 0;
+        }
+
+        .facebook-bg { background: #1877F2; }
+
+        /* Connect Banner */
+        .connect-section {
+            background: linear-gradient(135deg, var(--primary-dark), var(--primary));
+            color: white;
+            border-radius: 30px;
+            padding: 3.5rem 2rem;
+            text-align: center;
+            margin: 0 8% 5rem 8%;
+        }
+
+        .connect-section h2 {
+            font-size: clamp(1.8rem, 3vw, 2.2rem);
+            margin-bottom: 0.5rem;
+        }
+
+        .contact-info {
+            display: flex;
+            justify-content: center;
+            gap: 1.5rem;
+            margin-top: 1.8rem;
+            flex-wrap: wrap;
+        }
+
+        .contact-btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.8rem;
+            background: rgba(255, 255, 255, 0.15);
+            color: white;
+            padding: 0.8rem 1.8rem;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            backdrop-filter: blur(5px);
+            transition: background 0.3s;
+        }
+
+        .contact-btn:hover {
+            background: rgba(255, 255, 255, 0.25);
+        }
+
+        footer {
+            text-align: center;
+            padding: 2rem;
+            border-top: 1px solid rgba(0,0,0,0.05);
+            color: #64748B;
+            font-size: 0.9rem;
+        }
+
+        /* Tablet & Mobile Navigation Breakpoint (<= 992px) */
+        @media (max-width: 992px) {
+            nav {
+                padding: 0.8rem 5%;
+            }
+
+            .mobile-menu-btn {
+                display: block;
+            }
+
+            .nav-links {
+                position: fixed;
+                top: 0;
+                right: -100%;
+                width: 280px;
+                height: 100vh;
+                background: #FFFFFF;
+                flex-direction: column;
+                justify-content: flex-start;
+                padding: 5rem 2rem 2rem 2rem;
+                gap: 1.2rem;
+                box-shadow: -5px 0 25px rgba(0,0,0,0.15);
+                transition: right 0.3s ease-in-out;
+                z-index: 1001;
+            }
+
+            .nav-links.active {
+                right: 0;
+            }
+
+            .nav-links a {
+                font-size: 1.05rem;
+                padding: 0.6rem 0;
+                border-bottom: 1px solid #F1F5F9;
+                width: 100%;
+            }
+
+            .nav-links a i {
+                display: inline-block;
+                width: 24px;
+                color: var(--primary);
+            }
+
+            .hero {
+                flex-direction: column;
+                text-align: center;
+                padding: 7rem 5% 3rem 5%;
+                gap: 2.5rem;
+            }
+
+            .hero-content {
+                max-width: 100%;
+            }
+
+            .hero-buttons {
+                justify-content: center;
+            }
+
+            .credentials-pills {
+                justify-content: center;
+            }
+
+            .interactive-hero-img-wrapper {
+                max-width: 100%;
+            }
+
+            .section {
+                padding: 4rem 5%;
+            }
+
+            .connect-section {
+                margin: 0 5% 4rem 5%;
+                padding: 3rem 1.5rem;
+            }
+        }
+
+        /* Mobile Landscape & Medium Smart Phones (<= 768px) */
+        @media (max-width: 768px) {
+            .video-overlay-bar {
+                flex-direction: column;
+                align-items: flex-start;
+                padding: 1.5rem 5%;
+            }
+
+            .video-overlay-bar > div:last-child {
+                width: 100%;
+                justify-content: space-between;
+            }
+
+            .sound-toggle-btn, .video-overlay-bar .btn {
+                flex: 1;
+                text-align: center;
+            }
+
+            .modal-content {
+                padding: 1.5rem;
+                border-radius: 18px;
+            }
+        }
+
+        /* Small Mobile Devices (<= 576px) */
+        @media (max-width: 576px) {
+            .logo-text {
+                font-size: 1.05rem;
+            }
+
+            .logo-img {
+                height: 38px;
+            }
+
+            .nav-whatsapp-text {
+                display: none;
+            }
+
+            nav .btn {
+                padding: 0.6rem 0.9rem;
+                border-radius: 50%;
+            }
+
+            .hero-buttons {
+                flex-direction: column;
+                width: 100%;
+            }
+
+            .hero-buttons .btn {
+                width: 100%;
+            }
+
+            .interactive-hero-img-wrapper img {
+                height: 360px;
+            }
+
+            .hero-img-badge {
+                padding: 0.7rem 0.9rem;
+            }
+
+            .hero-img-badge i {
+                font-size: 1.4rem;
+            }
+
+            .hero-img-badge-text {
+                font-size: 0.78rem;
+            }
+
+            .programs-grid, .testimonials-grid, .forms-grid, .social-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .contact-info {
+                flex-direction: column;
+                width: 100%;
+            }
+
+            .contact-btn {
+                width: 100%;
+            }
+
+            .video-overlay-bar > div:last-child {
+                flex-direction: column;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Mobile Navigation Dark Overlay -->
+    <div class="nav-overlay" id="navOverlay" onclick="closeMobileMenu()"></div>
+
+    <!-- Navigation -->
+    <nav>
+        <a href="#" class="logo-container">
+            <img src="https://i.ibb.co/1t6WfmJ3/Gemini-Generated-Image-hn3zcjhn3zcjhn3z-removebg-preview.png" alt="Leaders' Loom Logo" class="logo-img">
+            <span class="logo-text">Coach Musfirah</span>
+        </a>
+        
+        <ul class="nav-links" id="navLinks">
+            <li><a href="#about" onclick="closeMobileMenu()"><i class="fa-solid fa-user-check"></i> About</a></li>
+            <li><a href="#video-showcase" onclick="closeMobileMenu()"><i class="fa-solid fa-circle-play"></i> Featured Video</a></li>
+            <li><a href="#programs" onclick="closeMobileMenu()"><i class="fa-solid fa-graduation-cap"></i> Courses & Programs</a></li>
+            <li><a href="#testimonials" onclick="closeMobileMenu()"><i class="fa-solid fa-star"></i> Testimonials</a></li>
+            <li><a href="#forms" onclick="closeMobileMenu()"><i class="fa-solid fa-file-signature"></i> Register</a></li>
+            <li><a href="#connect" onclick="closeMobileMenu()"><i class="fa-solid fa-paper-plane"></i> Connect</a></li>
+        </ul>
+
+        <div style="display: flex; align-items: center; gap: 0.8rem;">
+            <a href="https://wa.me/923350253872" target="_blank" class="btn">
+                <i class="fa-brands fa-whatsapp"></i> 
+                <span class="nav-whatsapp-text">WhatsApp Us</span>
+            </a>
+
+            <!-- Mobile Menu Hamburger Button -->
+            <button class="mobile-menu-btn" id="mobileMenuBtn" onclick="toggleMobileMenu()" aria-label="Toggle Mobile Navigation">
+                <i class="fa-solid fa-bars" id="menuIcon"></i>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero" id="about">
+        <div class="hero-content">
+            <span class="badge">
+                <img src="https://i.ibb.co/1t6WfmJ3/Gemini-Generated-Image-hn3zcjhn3zcjhn3z-removebg-preview.png" alt="Logo" style="height: 20px; width: auto;">
+                Leaders' Loom
+            </span>
+            <h1>Musfirah Akram</h1>
+            <h2>Mindframe & Parenting Strategist</h2>
+            <p>Helping individuals and families break limiting beliefs, heal emotional pain, shift perspectives, and build lives rooted in purpose, clarity, alignment, and faith.</p>
+            
+            <div class="credentials-pills">
+                <span class="pill"><i class="fa-solid fa-certificate"></i> NLP Practitioner (American Board Certified)</span>
+                <span class="pill"><i class="fa-solid fa-microscope"></i> Biomedical Engineer</span>
+                <span class="pill"><i class="fa-solid fa-microphone-lines"></i> Stage Master & Speaker</span>
+                <span class="pill"><i class="fa-solid fa-award"></i> Tabdeelian Certified Trainer</span>
+                <span class="pill"><i class="fa-solid fa-house-user"></i> Homeschooling Mama</span>
+            </div>
+
+            <div class="hero-buttons">
+                <a href="#programs" class="btn">Explore Programs</a>
+                <a href="https://www.instagram.com/musfirahakram/" target="_blank" class="btn" style="background: transparent; color: var(--dark); border: 2px solid #CBD5E1; box-shadow: none;">
+                    <i class="fa-brands fa-instagram"></i> Instagram
+                </a>
+            </div>
+        </div>
+        
+        <!-- Hero Portrait Image -->
+        <div class="hero-image-container">
+            <div class="interactive-hero-img-wrapper">
+                <a href="https://ibb.co/S7HhT0bL" target="_blank">
+                    <img src="https://i.ibb.co/FLyTqvFF/Gemini-Generated-Image-zdtfgjzdtfgjzdtf.png" alt="Coach Musfirah Akram Portrait">
+                </a>
+                <div class="hero-img-badge">
+                    <i class="fa-solid fa-heart-pulse"></i>
+                    <div class="hero-img-badge-text">
+                        Mindframe & Parenting Strategist
+                        <br><span style="color: #64748B; font-weight: 400;">Empowering lives with purpose & clarity</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+   
+    <!-- Programs & Courses Offered -->
+    <section class="section" id="programs">
+        <div class="section-title">
+            <h2>Featured Programs & Courses</h2>
+            <p>Click on any program card to view complete details, schedule, pricing, and curriculum.</p>
+        </div>
+
+        <div class="programs-grid">
+            <!-- Wisdom Weavers -->
+            <div class="program-card" onclick="openModal('wisdom-weavers')">
+                <div class="card-img-container">
+                    <img src="https://lh3.googleusercontent.com/pw/AP1GczNtANnkHMGzKV_GwR2P_jPxpZuvXQxyTMNcT509SHA66Pfcb2FJ4znHR9BuD_1sAvHNWlWjlXA9W6VBQq87zCeFU4osq7VzyLKlDAVRm-33djt6tptP6ZeelDVqox0PY86dZ32vGqEDI1_WDiZ1Nz8I=w493-h739-s-no-gm?authuser=0" alt="Wisdom Weavers Poster">
+                    <div class="card-img-overlay"></div>
+                    <span class="card-tag-badge">Ages 6–12</span>
+                </div>
+                <h3>Wisdom Weavers</h3>
+                <div class="price-tag">36$ / month <span style="text-decoration: line-through; color: #94A3B8; font-size: 0.85rem;">39$</span></div>
+                <p>Integrated learning through Quran for kids aged 6–12 years. Linking Science, Math, Languages, and Character building.</p>
+                <div class="click-hint">View Full Details <i class="fa-solid fa-arrow-right"></i></div>
+            </div>
+
+            <!-- Parenting Strategist Tab -->
+            <div class="program-card" onclick="openModal('parenting')">
+                <div class="card-img-container">
+                    <img src="https://images.unsplash.com/photo-1543269865-cbf427effbad?auto=format&fit=crop&q=80&w=800" alt="Parenting Strategy">
+                    <div class="card-img-overlay"></div>
+                    <span class="card-tag-badge">Parenting</span>
+                </div>
+                <h3>Parenting & Connection Strategy</h3>
+                <div class="price-tag">Parenting Workshops & Consultations</div>
+                <p>Equipping parents with conscious parenting techniques, emotional regulation, and deep connection with children.</p>
+                <div class="click-hint">View Full Details <i class="fa-solid fa-arrow-right"></i></div>
+            </div>
+
+            <!-- Homeschooling Tab -->
+            <div class="program-card" onclick="openModal('homeschooling')">
+                <div class="card-img-container">
+                    <img src="https://images.unsplash.com/photo-1503676260728-1c00da094a0b?auto=format&fit=crop&q=80&w=800" alt="Homeschooling Mentorship">
+                    <div class="card-img-overlay"></div>
+                    <span class="card-tag-badge">Homeschooling</span>
+                </div>
+                <h3>Homeschooling Mentorship</h3>
+                <div class="price-tag">Curriculum Design & Guidance</div>
+                <p>Practical strategies, holistic curriculum planning, and mindset alignment for mothers embarking on homeschooling.</p>
+                <div class="click-hint">View Full Details <i class="fa-solid fa-arrow-right"></i></div>
+            </div>
+
+            <!-- 1-on-1 Sessions -->
+            <div class="program-card" onclick="openModal('one-on-one')">
+                <div class="card-img-container">
+                    <img src="https://i.ibb.co/P0Dn7vD/1000384494.jpg" alt="1-on-1 Coaching Session">
+                    <div class="card-img-overlay"></div>
+                    <span class="card-tag-badge">1-on-1 Consultation</span>
+                </div>
+                <h3>1-on-1 Consultation Sessions</h3>
+                <div class="price-tag">30$ / Session</div>
+                <p>Personalized mentorship focused on mindframe transformation, mental emotional well-being, purpose discovery, and parenting support.</p>
+                <div class="click-hint">View Full Details <i class="fa-solid fa-arrow-right"></i></div>
+            </div>
+
+            <!-- Kirdar -->
+            <div class="program-card" onclick="openModal('kirdar')">
+                <div class="card-img-container">
+                    <img src="https://lh3.googleusercontent.com/pw/AP1GczMc04vgBpCsFcs1LQnoITv5HxeNAXJBN6F5O6QsCqK7TCts4dgCprFuKCMwcC_Qw8xKy0W2BsBPP6G7rtZmwsNzEu3UfDNR3TZO0stwxZDaW27oerieyHOEBYX55HuSf2rjqBffRoA3KCiQuClDXNoe=w493-h739-s-no-gm?authuser=0" alt="The Mirror Within - Kirdar Poster">
+                    <div class="card-img-overlay"></div>
+                    <span class="card-tag-badge">Transformation</span>
+                </div>
+                <h3>KIRDAR - The Mirror Within</h3>
+                <div class="price-tag">30$<span style="text-decoration: line-through; color: #94A3B8; font-size: 0.85rem;">35$</span></div>
+                <p>Your Intentions. Your Character. Your Reality. A dedicated program for belief transformation and perspective shifts.</p>
+                <div class="click-hint">View Full Details <i class="fa-solid fa-arrow-right"></i></div>
+            </div>
+
+            <!-- Ramadan Series -->
+            <div class="program-card" onclick="openModal('ramadan-series')">
+                <div class="card-img-container">
+                    <img src="https://images.unsplash.com/photo-1564769625905-50e93615e769?auto=format&fit=crop&q=80&w=800" alt="Ramadan Learning Series">
+                    <div class="card-img-overlay"></div>
+                    <span class="card-tag-badge">Interactive Series</span>
+                </div>
+                <h3>Ramadhan: Hidayah & Furqaan</h3>
+                <div class="price-tag">Interactive Kids & Youth Series</div>
+                <p>Interactive games, storytelling, Quran as a life filter, science links, and practical deed challenges.</p>
+                <div class="click-hint">View Full Details <i class="fa-solid fa-arrow-right"></i></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="section" id="testimonials" style="background: rgba(108, 92, 231, 0.03);">
+        <div class="section-title">
+            <h2>Community Feedback & Reviews</h2>
+            <p>Real experiences and heartfelt thoughts shared by participants across all our sessions and workshops.</p>
+        </div>
+
+        <div class="testimonials-grid">
+            <div class="testimonial-card">
+                <div>
+                    <i class="fa-solid fa-quote-left quote-icon"></i>
+                    <div class="rating-stars">
+                        <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                    </div>
+                    <div class="testimonial-text">
+                        "It was good and helpful. I was able to see new perspectives of positive thinking. The goal we worked on was able to achieve alhamdulillah."
+                    </div>
+                </div>
+                <div class="testimonial-author">
+                    <div class="author-avatar">C</div>
+                    <div class="author-info">
+                        <h4>Client Feedback</h4>
+                        <span>Perspective Transformation Session</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="testimonial-card">
+                <div>
+                    <i class="fa-solid fa-quote-left quote-icon"></i>
+                    <div class="rating-stars">
+                        <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                    </div>
+                    <div class="testimonial-text">
+                        "Thank you for the session. I really appreciate your dedication and effort — it's inspiring. You gave me ample time, and your friendly vibe made me feel comfortable right away. Great experience! 😊"
+                    </div>
+                </div>
+                <div class="testimonial-author">
+                    <div class="author-avatar">S</div>
+                    <div class="author-info">
+                        <h4>Session Participant</h4>
+                        <span>1-on-1 Mentorship Session</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="testimonial-card">
+                <div>
+                    <i class="fa-solid fa-quote-left quote-icon"></i>
+                    <div class="rating-stars">
+                        <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                    </div>
+                    <div class="testimonial-text">
+                        "JazakAllahu Khairan for such an informative and engaging session! 🌸 The kids truly enjoyed it. The Kahoot was exciting and your clear explanations made everything easy to understand."
+                    </div>
+                </div>
+                <div class="testimonial-author">
+                    <div class="author-avatar">M</div>
+                    <div class="author-info">
+                        <h4>Maryum Akram</h4>
+                        <span>Leaders' Loom Member</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="testimonial-card">
+                <div>
+                    <i class="fa-solid fa-quote-left quote-icon"></i>
+                    <div class="rating-stars">
+                        <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                    </div>
+                    <div class="testimonial-text">
+                        "Very nice, Jazakallah! Looking forward to another wonderful session."
+                    </div>
+                </div>
+                <div class="testimonial-author">
+                    <div class="author-avatar">Z</div>
+                    <div class="author-info">
+                        <h4>Zunaira Fahad</h4>
+                        <span>Leaders' Loom Member</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="testimonial-card">
+                <div>
+                    <i class="fa-solid fa-quote-left quote-icon"></i>
+                    <div class="rating-stars">
+                        <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                    </div>
+                    <div class="testimonial-text">
+                        "Alhamdulillah, today's Surah Fatiha session for kids was truly beneficial. 🌸 The teacher kept the children engaged through interactive discussions and simple explanations."
+                    </div>
+                </div>
+                <div class="testimonial-author">
+                    <div class="author-avatar">S</div>
+                    <div class="author-info">
+                        <h4>Sidra Arshad</h4>
+                        <span>Parent & Community Member</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="testimonial-card">
+                <div>
+                    <i class="fa-solid fa-quote-left quote-icon"></i>
+                    <div class="rating-stars">
+                        <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                    </div>
+                    <div class="testimonial-text">
+                        "Allah subhana o ta'ala AP ko bhot bhot jaza e kher den. Bhot hi zaberdest session tha. Sb sy achi bat k ap ny bhot hi pur hikmat our peyary andaz sy bachon ko track py rkha."
+                    </div>
+                </div>
+                <div class="testimonial-author">
+                    <div class="author-avatar">S</div>
+                    <div class="author-info">
+                        <h4>Sumeera Usman</h4>
+                        <span>Leaders' Loom Member</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Registration Forms Section -->
+    <section class="section" id="forms">
+        <div class="section-title">
+            <h2>Registration Forms</h2>
+            <p>Select a program below to open the official Google Form registration.</p>
+        </div>
+
+        <div class="forms-grid">
+            <div class="form-card">
+                <div>
+                    <span class="form-card-badge">Course 1</span>
+                    <h3>Wisdom Weavers & Kids Programs</h3>
+                    <p>Apply for Wisdom Weavers (Integrated Learning Through Quran) & Kids Workshops.</p>
+                </div>
+                <a href="https://docs.google.com/forms/d/e/1FAIpQLSdFRWwQcAisuCOtdm5hafbh6Sm6Ftw0YuPB46EftyX-XSmx0Q/viewform?usp=publish-editor" target="_blank" class="btn">Open Registration Form <i class="fa-solid fa-arrow-up-right-from-square" style="font-size: 0.8rem;"></i></a>
+            </div>
+
+            <div class="form-card">
+                <div>
+                    <span class="form-card-badge">Course 2</span>
+                    <h3>KIRDAR & Mindframe Transformation</h3>
+                    <p>Register for KIRDAR - The Mirror Within & Mindset Transformation Coaching.</p>
+                </div>
+                <a href="https://docs.google.com/forms/d/e/1FAIpQLSejSfi4xO1i31ky4v5al-l5lJRXkpiYQ1y2FxYSLqZsadOgHA/viewform?usp=publish-editor" target="_blank" class="btn">Open Registration Form <i class="fa-solid fa-arrow-up-right-from-square" style="font-size: 0.8rem;"></i></a>
+            </div>
+
+            <div class="form-card">
+                <div>
+                    <span class="form-card-badge">Course 3</span>
+                    <h3>Parenting, Homeschooling & 1-on-1 Consultation</h3>
+                    <p>General Enrollment Form for 1-on-1 Consultations, Parenting, & Homeschooling Mentorship.</p>
+                </div>
+                <a href="https://docs.google.com/forms/d/e/1FAIpQLScvADYqGs7x-2y2ny86qakxSbj5GI1BJnSwQ351uW6zgG-1pg/viewform?usp=header" target="_blank" class="btn">Open Registration Form <i class="fa-solid fa-arrow-up-right-from-square" style="font-size: 0.8rem;"></i></a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Social Media Section -->
+    <section class="section" id="social" style="padding-top: 2rem;">
+        <div class="section-title">
+            <h2>Social Media Highlights</h2>
+            <p>Watch latest posts, reels, and video updates directly on Facebook.</p>
+        </div>
+
+        <div class="social-grid">
+            <a href="https://www.facebook.com/share/v/1Bu56diaYs/" target="_blank" class="social-card">
+                <div class="social-icon facebook-bg"><i class="fa-brands fa-facebook-f"></i></div>
+                <div>
+                    <h4 style="font-size: 1rem;">Facebook Video Highlight</h4>
+                    <span style="font-size: 0.85rem; color: #64748B;">Watch Video on Facebook</span>
+                </div>
+            </a>
+
+            <a href="https://www.facebook.com/share/r/1L6vf6uBua/" target="_blank" class="social-card">
+                <div class="social-icon facebook-bg"><i class="fa-brands fa-facebook-f"></i></div>
+                <div>
+                    <h4 style="font-size: 1rem;">Facebook Reel Highlight</h4>
+                    <span style="font-size: 0.85rem; color: #64748B;">Watch Reel on Facebook</span>
+                </div>
+            </a>
+
+            <a href="https://www.facebook.com/share/p/1E5KRxHPDf/" target="_blank" class="social-card">
+                <div class="social-icon facebook-bg"><i class="fa-brands fa-facebook-f"></i></div>
+                <div>
+                    <h4 style="font-size: 1rem;">Facebook Featured Post</h4>
+                    <span style="font-size: 0.85rem; color: #64748B;">View Post on Facebook</span>
+                </div>
+            </a>
+        </div>
+    </section>
+
+    <!-- Modal Detail Popup -->
+    <div class="modal-overlay" id="programModal" onclick="closeModalOnOuter(event)">
+        <div class="modal-content">
+            <button class="close-modal" onclick="closeModal()"><i class="fa-solid fa-xmark"></i></button>
+            <div class="modal-header-img">
+                <img id="modalImg" src="" alt="Program Detail">
+            </div>
+            <div class="modal-header">
+                <div>
+                    <h3 id="modalTitle" style="font-size: 1.4rem; color: var(--dark);"></h3>
+                    <span id="modalTag" style="font-size: 0.85rem; color: var(--primary); font-weight: 600;"></span>
+                </div>
+            </div>
+            <div class="modal-body">
+                <div class="meta-box" id="modalMeta"></div>
+
+                <p id="modalDescription" style="color: #475569; font-size: 0.95rem;"></p>
+                
+                <h4>Key Highlights & Features:</h4>
+                <ul id="modalHighlights"></ul>
+
+                <div style="margin-top: 2rem; display: flex; gap: 1rem; flex-wrap: wrap;">
+                    <a href="https://wa.me/923350253872" target="_blank" class="btn" style="flex: 1; text-align: center; text-decoration: none;">
+                        <i class="fa-brands fa-whatsapp"></i> Enroll via WhatsApp
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Connect Banner -->
+    <div class="connect-section" id="connect">
+        <h2>Connect with Coach Musfirah Akram</h2>
+        <p>Leaders' Loom | Mindframe & Parenting Strategist</p>
+        
+        <div class="contact-info">
+            <a href="https://wa.me/923350253872" target="_blank" class="contact-btn">
+                <i class="fa-brands fa-whatsapp" style="font-size: 1.3rem;"></i>
+                +92 335 0253872
+            </a>
+            <a href="https://www.instagram.com/musfirahakram/" target="_blank" class="contact-btn">
+                <i class="fa-brands fa-instagram" style="font-size: 1.3rem;"></i>
+                @musfirahakram
+            </a>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2026 Coach Musfirah Akram | Leaders' Loom. All rights reserved.</p>
+    </footer>
+
+    <script>
+        // Mobile Navigation Handlers
+        function toggleMobileMenu() {
+            const navLinks = document.getElementById('navLinks');
+            const navOverlay = document.getElementById('navOverlay');
+            const menuIcon = document.getElementById('menuIcon');
+
+            navLinks.classList.toggle('active');
+            navOverlay.classList.toggle('active');
+
+            if (navLinks.classList.contains('active')) {
+                menuIcon.className = 'fa-solid fa-xmark';
+            } else {
+                menuIcon.className = 'fa-solid fa-bars';
+            }
+        }
+
+        function closeMobileMenu() {
+            const navLinks = document.getElementById('navLinks');
+            const navOverlay = document.getElementById('navOverlay');
+            const menuIcon = document.getElementById('menuIcon');
+
+            navLinks.classList.remove('active');
+            navOverlay.classList.remove('active');
+            menuIcon.className = 'fa-solid fa-bars';
+        }
+
+        // Automatic Video Scroll-Play Script using Intersection Observer
+        document.addEventListener('DOMContentLoaded', () => {
+            const video = document.getElementById('scrollVideo');
+
+            if (video) {
+                // Ensure video is muted initially (required for mobile & desktop autoplay policies)
+                video.muted = true;
+
+                const observerOptions = {
+                    root: null,
+                    rootMargin: '0px',
+                    threshold: 0.25 // Trigger play when 25% of the video is visible in viewport
+                };
+
+                const videoObserver = new IntersectionObserver((entries) => {
+                    entries.forEach(entry => {
+                        if (entry.isIntersecting) {
+                            const playPromise = video.play();
+                            if (playPromise !== undefined) {
+                                playPromise.catch(error => {
+                                    console.log('Autoplay prevented by browser policy:', error);
+                                });
+                            }
+                        } else {
+                            if (!video.paused) {
+                                video.pause();
+                            }
+                        }
+                    });
+                }, observerOptions);
+
+                videoObserver.observe(video);
+            }
+        });
+
+        // Unmute / Mute Audio Toggle Handler
+        function toggleMute() {
+            const video = document.getElementById('scrollVideo');
+            const icon = document.getElementById('soundIcon');
+            const text = document.getElementById('soundText');
+
+            if (video.muted) {
+                video.muted = false;
+                icon.className = 'fa-solid fa-volume-high';
+                text.innerText = 'Mute Sound';
+            } else {
+                video.muted = true;
+                icon.className = 'fa-solid fa-volume-xmark';
+                text.innerText = 'Unmute Sound';
+            }
+        }
+
+        // Program Data Details
+        const programData = {
+            'wisdom-weavers': {
+                title: 'Wisdom Weavers (Integrated Learning Through Quran)',
+                tag: 'Age Group: 6–12 Years',
+                img: 'https://lh3.googleusercontent.com/pw/AP1GczNtANnkHMGzKV_GwR2P_jPxpZuvXQxyTMNcT509SHA66Pfcb2FJ4znHR9BuD_1sAvHNWlWjlXA9W6VBQq87zCeFU4osq7VzyLKlDAVRm-33djt6tptP6ZeelDVqox0PY86dZ32vGqEDI1_WDiZ1Nz8I=w493-h739-s-no-gm?authuser=0',
+                meta: '<strong>Actual Fee:</strong> RS 15,000 | <strong>Discounted Fee:</strong> RS 10,000 / month | <strong>Schedule:</strong> Tuesdays & Thursdays',
+                description: 'An integrated learning experience linking core subjects to Quranic principles, helping children develop strong character and wise decision-making.',
+                highlights: [
+                    'Science from Quran: Relating scientific concepts with Quranic verses.',
+                    'Mathematics: Explaining Quranic themes through mathematical logic.',
+                    'Language Skills: Basic English and Arabic grammar concepts.',
+                    'Craft Art: Hands-on activities related to Surahs.',
+                    'Character Pillars: Wise choices, strong character, decision-making power.'
+                ]
+            },
+            'parenting': {
+                title: 'Parenting & Connection Strategy',
+                tag: 'Parenting Workshop & Mentorship',
+                img: 'https://images.unsplash.com/photo-1543269865-cbf427effbad?auto=format&fit=crop&q=80&w=800',
+                meta: '<strong>Specialist:</strong> Mindframe & Parenting Strategist | <strong>Format:</strong> Group & 1:1',
+                description: 'Empowering parents with effective tools to nurture emotional intelligence, build mutual trust, and resolve conflicts calmly.',
+                highlights: [
+                    'Understanding child psychology and emotional triggers.',
+                    'Replacing reactive discipline with empathetic connection.',
+                    'Building strong Islamic character and values at home.'
+                ]
+            },
+            'homeschooling': {
+                title: 'Homeschooling Mentorship & Strategy',
+                tag: 'Homeschooling Guidance',
+                img: 'https://images.unsplash.com/photo-1503676260728-1c00da094a0b?auto=format&fit=crop&q=80&w=800',
+                meta: '<strong>Specialist:</strong> Homeschooling Mama & Educator',
+                description: 'Step-by-step guidance for mothers who want to start or structure their homeschooling journey with clarity and confidence.',
+                highlights: [
+                    'Custom curriculum selection tailored to child interest.',
+                    'Creating an engaging and stress-free learning environment.',
+                    'Integrating Faith, Science, and Life Skills.'
+                ]
+            },
+            'one-on-one': {
+                title: '1-on-1 Consultation Sessions',
+                tag: 'Personalized Coaching',
+                img: 'https://i.ibb.co/P0Dn7vD/1000384494.jpg',
+                meta: '<strong>Consultation Fee:</strong> RS 7,500 / Session',
+                description: 'Tailored individual coaching sessions providing direct guidance and safe space to heal, re-align, and navigate life challenges.',
+                highlights: [
+                    'Mindframe Reset & Belief Transformation.',
+                    'Parenting Support & Guidance for mothers.',
+                    'Purpose Discovery & Life Alignment.'
+                ]
+            },
+            'kirdar': {
+                title: 'KIRDAR - The Mirror Within',
+                tag: 'Belief Transformation Program',
+                img: 'https://lh3.googleusercontent.com/pw/AP1GczMc04vgBpCsFcs1LQnoITv5HxeNAXJBN6F5O6QsCqK7TCts4dgCprFuKCMwcC_Qw8xKy0W2BsBPP6G7rtZmwsNzEu3UfDNR3TZO0stwxZDaW27oerieyHOEBYX55HuSf2rjqBffRoA3KCiQuClDXNoe=w493-h739-s-no-gm?authuser=0',
+                meta: '<strong>Discounted Price:</strong> RS 8,000 (Actual: RS 12,000)',
+                description: 'A transformative course designed by Musfirah Akram to help individuals challenge limiting beliefs and build unshakeable character (Kirdar).',
+                highlights: [
+                    'Intentions, Thoughts, Actions, Habits, Character framework.',
+                    'Sincere Intentions bring Allah’s pleasure and inner peace.',
+                    'Strong Kirdar builds trust, respect, and impact.'
+                ]
+            },
+            'ramadan-series': {
+                title: 'Ramadhan: A Month of Hidayah & Furqaan',
+                tag: 'Spiritual & Educational Series',
+                img: 'https://images.unsplash.com/photo-1564769625905-50e93615e769?auto=format&fit=crop&q=80&w=800',
+                meta: '<strong>Format:</strong> Interactive Workshops & Games',
+                description: 'A dedicated series designed to help children and families understand the essence of Ramadan through interactive learning.',
+                highlights: [
+                    'What is Ramadhan?: Meaning, fasting purpose, and Taqwa.',
+                    'Hidayah: Listening to the right voice.',
+                    'Furqaan: Quran as a life filter to separate truth from falsehood.'
+                ]
+            }
+        };
+
+        // Modal Handlers
+        function openModal(programKey) {
+            const data = programData[programKey];
+            if (!data) return;
+
+            document.getElementById('modalTitle').innerText = data.title;
+            document.getElementById('modalTag').innerText = data.tag;
+            document.getElementById('modalImg').src = data.img;
+            document.getElementById('modalMeta').innerHTML = data.meta;
+            document.getElementById('modalDescription').innerText = data.description;
+
+            const highlightsList = document.getElementById('modalHighlights');
+            highlightsList.innerHTML = '';
+            data.highlights.forEach(item => {
+                const li = document.createElement('li');
+                li.innerText = item;
+                highlightsList.appendChild(li);
+            });
+
+            document.getElementById('programModal').style.display = 'flex';
+        }
+
+        function closeModal() {
+            document.getElementById('programModal').style.display = 'none';
+        }
+
+        function closeModalOnOuter(event) {
+            if (event.target.id === 'programModal') {
+                closeModal();
+            }
+        }
+    </script>
+</body>
+</html>
