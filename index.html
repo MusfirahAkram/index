@@ -90,7 +90,7 @@
             display: none;
         }
 
-        .nav-links a:hover {
+        .nav-links a:hover, .nav-links a.active {
             color: var(--primary);
         }
 
@@ -291,8 +291,7 @@
             50% { transform: translateY(-12px); }
         }
 
-
-        /* Programs Section */
+        /* Common Section Layout */
         .section {
             padding: 5rem 8%;
         }
@@ -312,6 +311,7 @@
             margin-top: 0.5rem;
         }
 
+        /* Programs Section */
         .programs-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -426,18 +426,107 @@
             gap: 0.5rem;
         }
 
-        /* Testimonials Section */
-        .testimonials-grid {
+        /* Feedback Hub Section (Source 4 Merged) */
+        .stats-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 2rem;
-            margin-top: 2rem;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1.5rem;
+            max-width: 900px;
+            margin: 0 auto 3rem auto;
+            text-align: center;
         }
 
-        .testimonial-card {
+        .stat-card {
             background: var(--card-bg);
-            border-radius: 24px;
-            padding: 2rem;
+            padding: 1.2rem;
+            border-radius: 16px;
+            border: 1px solid rgba(108, 92, 231, 0.1);
+            box-shadow: 0 4px 15px rgba(0,0,0,0.02);
+        }
+
+        .stat-card h3 {
+            font-size: 1.8rem;
+            color: var(--primary-dark);
+            font-weight: 700;
+        }
+
+        .stat-card p {
+            font-size: 0.85rem;
+            color: #64748B;
+            margin-bottom: 0;
+        }
+
+        .controls-section {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 1.2rem;
+            margin-bottom: 2rem;
+        }
+
+        .filter-pills {
+            display: flex;
+            gap: 0.6rem;
+            flex-wrap: wrap;
+        }
+
+        .filter-btn {
+            background: white;
+            border: 1px solid #E2E8F0;
+            padding: 0.5rem 1.2rem;
+            border-radius: 50px;
+            font-size: 0.88rem;
+            font-weight: 600;
+            color: #475569;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .filter-btn:hover, .filter-btn.active {
+            background: var(--primary);
+            color: white;
+            border-color: var(--primary);
+            box-shadow: 0 4px 12px rgba(108, 92, 231, 0.25);
+        }
+
+        .search-box {
+            position: relative;
+            min-width: 260px;
+        }
+
+        .search-box input {
+            width: 100%;
+            padding: 0.6rem 1rem 0.6rem 2.5rem;
+            border-radius: 50px;
+            border: 1px solid #CBD5E1;
+            outline: none;
+            font-size: 0.9rem;
+            transition: border-color 0.3s;
+        }
+
+        .search-box input:focus {
+            border-color: var(--primary);
+        }
+
+        .search-box i {
+            position: absolute;
+            left: 1rem;
+            top: 50%;
+            transform: translateY(-50%);
+            color: #94A3B8;
+        }
+
+        .feedback-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 2rem;
+        }
+
+        .feedback-card {
+            background: var(--card-bg);
+            border-radius: 20px;
+            padding: 1.8rem;
             box-shadow: 0 10px 30px rgba(0,0,0,0.03);
             border: 1px solid rgba(108, 92, 231, 0.08);
             display: flex;
@@ -445,70 +534,76 @@
             justify-content: space-between;
             position: relative;
             transition: all 0.35s cubic-bezier(0.4, 0, 0.2, 1);
-            overflow: hidden;
         }
 
-        .testimonial-card::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 5px;
-            background: linear-gradient(90deg, var(--primary), var(--secondary));
-            opacity: 0;
-            transition: opacity 0.3s ease;
-        }
-
-        .testimonial-card:hover {
+        .feedback-card:hover {
             transform: translateY(-8px);
             box-shadow: 0 20px 40px rgba(108, 92, 231, 0.12);
             border-color: rgba(108, 92, 231, 0.25);
         }
 
-        .testimonial-card:hover::before {
-            opacity: 1;
-        }
-
-        .quote-icon {
-            font-size: 1.8rem;
-            color: var(--primary);
-            opacity: 0.3;
+        .card-top {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
             margin-bottom: 1rem;
-            transition: transform 0.3s ease, opacity 0.3s ease;
         }
 
-        .testimonial-card:hover .quote-icon {
-            transform: scale(1.15) rotate(-5deg);
-            opacity: 0.8;
+        .program-tag {
+            background: rgba(108, 92, 231, 0.1);
+            color: var(--primary);
+            padding: 0.25rem 0.75rem;
+            border-radius: 20px;
+            font-size: 0.75rem;
+            font-weight: 700;
+        }
+
+        .audio-tag {
+            background: rgba(253, 121, 168, 0.15);
+            color: #D63031;
+            padding: 0.2rem 0.6rem;
+            border-radius: 12px;
+            font-size: 0.72rem;
+            font-weight: 700;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.3rem;
+            margin-bottom: 0.8rem;
         }
 
         .rating-stars {
             color: #FFB800;
             font-size: 0.85rem;
-            margin-bottom: 0.8rem;
             display: flex;
-            gap: 0.2rem;
+            gap: 0.15rem;
         }
 
-        .testimonial-text {
-            font-size: 0.95rem;
+        .feedback-text {
+            font-size: 0.93rem;
             color: #334155;
             line-height: 1.65;
             margin-bottom: 1.5rem;
         }
 
-        .testimonial-author {
+        .feedback-text p {
+            margin-bottom: 0.6rem;
+        }
+
+        .feedback-text p:last-child {
+            margin-bottom: 0;
+        }
+
+        .feedback-author {
             display: flex;
             align-items: center;
-            gap: 1rem;
+            gap: 0.8rem;
             padding-top: 1rem;
             border-top: 1px solid #F1F5F9;
         }
 
         .author-avatar {
-            width: 44px;
-            height: 44px;
+            width: 42px;
+            height: 42px;
             border-radius: 50%;
             background: linear-gradient(135deg, var(--primary), var(--primary-dark));
             color: white;
@@ -516,23 +611,57 @@
             align-items: center;
             justify-content: center;
             font-weight: 700;
-            font-size: 1rem;
-            box-shadow: 0 4px 10px rgba(108, 92, 231, 0.25);
+            font-size: 0.95rem;
             flex-shrink: 0;
         }
 
         .author-info h4 {
-            font-size: 0.95rem;
+            font-size: 0.92rem;
             color: var(--dark);
             font-weight: 700;
         }
 
         .author-info span {
-            font-size: 0.8rem;
+            font-size: 0.78rem;
             color: #64748B;
+            display: block;
         }
 
-        /* Modal Styles */
+        .card-actions {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-top: 1rem;
+            padding-top: 0.8rem;
+            border-top: 1px dashed #E2E8F0;
+            font-size: 0.82rem;
+        }
+
+        .helpful-btn {
+            background: transparent;
+            border: none;
+            color: #64748B;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            gap: 0.4rem;
+            font-weight: 600;
+            transition: color 0.2s;
+        }
+
+        .helpful-btn:hover, .helpful-btn.liked {
+            color: var(--primary);
+        }
+
+        .verified-badge {
+            color: #10B981;
+            display: flex;
+            align-items: center;
+            gap: 0.3rem;
+            font-weight: 600;
+        }
+
+        /* Modal Base Styles */
         .modal-overlay {
             position: fixed;
             top: 0;
@@ -636,6 +765,31 @@
             margin-bottom: 1.5rem;
             font-size: 0.9rem;
             color: #334155;
+        }
+
+        /* Form Controls inside Modals */
+        .form-group {
+            margin-bottom: 1.2rem;
+        }
+
+        .form-group label {
+            display: block;
+            font-weight: 600;
+            margin-bottom: 0.4rem;
+            font-size: 0.9rem;
+        }
+
+        .form-group input, .form-group select, .form-group textarea {
+            width: 100%;
+            padding: 0.7rem 1rem;
+            border-radius: 10px;
+            border: 1px solid #CBD5E1;
+            font-size: 0.95rem;
+            outline: none;
+        }
+
+        .form-group input:focus, .form-group select:focus, .form-group textarea:focus {
+            border-color: var(--primary);
         }
 
         /* Registration Forms Section */
@@ -770,7 +924,7 @@
             font-size: 0.9rem;
         }
 
-        /* Tablet & Mobile Navigation Breakpoint (<= 992px) */
+        /* Media Queries */
         @media (max-width: 992px) {
             nav {
                 padding: 0.8rem 5%;
@@ -846,31 +1000,20 @@
             }
         }
 
-        /* Mobile Landscape & Medium Smart Phones (<= 768px) */
         @media (max-width: 768px) {
-            .video-overlay-bar {
+            .controls-section {
                 flex-direction: column;
-                align-items: flex-start;
-                padding: 1.5rem 5%;
+                align-items: stretch;
             }
-
-            .video-overlay-bar > div:last-child {
+            .search-box {
                 width: 100%;
-                justify-content: space-between;
             }
-
-            .sound-toggle-btn, .video-overlay-bar .btn {
-                flex: 1;
-                text-align: center;
-            }
-
             .modal-content {
                 padding: 1.5rem;
                 border-radius: 18px;
             }
         }
 
-        /* Small Mobile Devices (<= 576px) */
         @media (max-width: 576px) {
             .logo-text {
                 font-size: 1.05rem;
@@ -914,7 +1057,7 @@
                 font-size: 0.78rem;
             }
 
-            .programs-grid, .testimonials-grid, .forms-grid, .social-grid {
+            .programs-grid, .feedback-grid, .forms-grid, .social-grid {
                 grid-template-columns: 1fr;
             }
 
@@ -925,10 +1068,6 @@
 
             .contact-btn {
                 width: 100%;
-            }
-
-            .video-overlay-bar > div:last-child {
-                flex-direction: column;
             }
         }
     </style>
@@ -947,9 +1086,8 @@
         
         <ul class="nav-links" id="navLinks">
             <li><a href="#about" onclick="closeMobileMenu()"><i class="fa-solid fa-user-check"></i> About</a></li>
-          
             <li><a href="#programs" onclick="closeMobileMenu()"><i class="fa-solid fa-graduation-cap"></i> Courses & Programs</a></li>
-            <li><a href="#testimonials" onclick="closeMobileMenu()"><i class="fa-solid fa-star"></i> Testimonials</a></li>
+            <li><a href="#feedback" onclick="closeMobileMenu()"><i class="fa-solid fa-star"></i> Feedback Hub</a></li>
             <li><a href="#forms" onclick="closeMobileMenu()"><i class="fa-solid fa-file-signature"></i> Register</a></li>
             <li><a href="#connect" onclick="closeMobileMenu()"><i class="fa-solid fa-paper-plane"></i> Connect</a></li>
         </ul>
@@ -1011,7 +1149,6 @@
         </div>
     </section>
 
-   
     <!-- Programs & Courses Offered -->
     <section class="section" id="programs">
         <div class="section-title">
@@ -1080,8 +1217,7 @@
                     <span class="card-tag-badge">Transformation</span>
                 </div>
                 <h3>KIRDAR - The Mirror Within</h3>
-                
-                 <div class="price-tag">30$ / month <span style="text-decoration: line-through; color: #94A3B8; font-size: 0.85rem;">35$</span></div>
+                <div class="price-tag">30$<span style="text-decoration: line-through; color: #94A3B8; font-size: 0.85rem;">35$</span></div>
                 <p>Your Intentions. Your Character. Your Reality. A dedicated program for belief transformation and perspective shifts.</p>
                 <div class="click-hint">View Full Details <i class="fa-solid fa-arrow-right"></i></div>
             </div>
@@ -1101,124 +1237,280 @@
         </div>
     </section>
 
-    <!-- Testimonials Section -->
-    <section class="section" id="testimonials" style="background: rgba(108, 92, 231, 0.03);">
+    <!-- Feedback Hub & Community Voice Section -->
+    <section class="section" id="feedback" style="background: rgba(108, 92, 231, 0.03);">
         <div class="section-title">
-            <h2>Community Feedback & Reviews</h2>
-            <p>Real experiences and heartfelt thoughts shared by participants across all our sessions and workshops.</p>
+            <span class="badge" style="margin-bottom: 0.5rem;">
+                <i class="fa-solid fa-comments"></i> Community Voice
+            </span>
+            <h2>Participant Reviews & Reflections</h2>
+            <p>Explore authentic personal stories, voice reflections, and transformation feedback from members across all our programs.</p>
         </div>
 
-        <div class="testimonials-grid">
-            <div class="testimonial-card">
+        <div class="stats-grid">
+            <div class="stat-card">
+                <h3>4.9 / 5</h3>
+                <p>Overall Satisfaction</p>
+            </div>
+            <div class="stat-card">
+                <h3>100%</h3>
+                <p>Interactive Engagement</p>
+            </div>
+            <div class="stat-card">
+                <h3>500+</h3>
+                <p>Lives Empowered</p>
+            </div>
+        </div>
+
+        <div class="controls-section">
+            <div class="filter-pills">
+                <button class="filter-btn active" onclick="filterFeedback('all')">All Reviews</button>
+                <button class="filter-btn" onclick="filterFeedback('KIRDAR')">KIRDAR</button>
+                <button class="filter-btn" onclick="filterFeedback('1-on-1 Sessions')">1-on-1 Sessions</button>
+                <button class="filter-btn" onclick="filterFeedback('Wisdom Weavers')">Wisdom Weavers</button>
+                <button class="filter-btn" onclick="filterFeedback('Parenting')">Parenting</button>
+            </div>
+
+            <div style="display: flex; gap: 1rem; flex-wrap: wrap; align-items: center;">
+                <div class="search-box">
+                    <i class="fa-solid fa-magnifying-glass"></i>
+                    <input type="text" id="searchInput" onkeyup="searchCards()" placeholder="Search feedback...">
+                </div>
+                <button class="btn" onclick="openFeedbackModal()">
+                    <i class="fa-solid fa-pen-to-square"></i> Share Experience
+                </button>
+            </div>
+        </div>
+
+        <div class="feedback-grid" id="feedbackGrid">
+            <!-- Feedback 1 -->
+            <div class="feedback-card" data-category="KIRDAR">
                 <div>
-                    <i class="fa-solid fa-quote-left quote-icon"></i>
-                    <div class="rating-stars">
-                        <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                    <div class="card-top">
+                        <span class="program-tag">KIRDAR</span>
+                        <div class="rating-stars">
+                            <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                        </div>
                     </div>
-                    <div class="testimonial-text">
-                        "It was good and helpful. I was able to see new perspectives of positive thinking. The goal we worked on was able to achieve alhamdulillah."
+                    <div class="feedback-text">
+                        <p>"This workshop was beneficial for me Alhamdolilah since it gave me a chance to reflect on my life and improve myself in ways and i will continue to follow what i learned in the future as well in sha Allah. May Allah reward you too thankyou maam."</p>
                     </div>
                 </div>
-                <div class="testimonial-author">
-                    <div class="author-avatar">C</div>
-                    <div class="author-info">
-                        <h4>Client Feedback</h4>
-                        <span>Perspective Transformation Session</span>
+                <div>
+                    <div class="feedback-author">
+                        <div class="author-avatar">R</div>
+                        <div class="author-info">
+                            <h4>Reem Fatima</h4>
+                            <span>Workshop Participant</span>
+                        </div>
+                    </div>
+                    <div class="card-actions">
+                        <span class="verified-badge"><i class="fa-solid fa-circle-check"></i> Verified Member</span>
+                        <button class="helpful-btn" onclick="toggleHelpful(this)"><i class="fa-regular fa-thumbs-up"></i> Helpful (<span>4</span>)</button>
                     </div>
                 </div>
             </div>
 
-            <div class="testimonial-card">
+            <!-- Feedback 2 -->
+            <div class="feedback-card" data-category="KIRDAR">
                 <div>
-                    <i class="fa-solid fa-quote-left quote-icon"></i>
-                    <div class="rating-stars">
-                        <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                    <div class="card-top">
+                        <span class="program-tag">KIRDAR</span>
+                        <div class="rating-stars">
+                            <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                        </div>
                     </div>
-                    <div class="testimonial-text">
-                        "Thank you for the session. I really appreciate your dedication and effort — it's inspiring. You gave me ample time, and your friendly vibe made me feel comfortable right away. Great experience! 😊"
+                    <div class="feedback-text">
+                        <p>"Thanks so much for the amazing workshop, Musfira! The topic really got me thinking about how important 'character', 'kirdaar' is and how we need to work on ourselves to improve. I couldn't be regular, but properly going through all the worksheets can definitely help anyone become a better person. May Allah accept this from you and give you the energy to host more awesome workshops!"</p>
                     </div>
                 </div>
-                <div class="testimonial-author">
-                    <div class="author-avatar">S</div>
-                    <div class="author-info">
-                        <h4>Session Participant</h4>
-                        <span>1-on-1 Mentorship Session</span>
+                <div>
+                    <div class="feedback-author">
+                        <div class="author-avatar">P</div>
+                        <div class="author-info">
+                            <h4>Workshop Participant</h4>
+                            <span>KIRDAR Workshop</span>
+                        </div>
+                    </div>
+                    <div class="card-actions">
+                        <span class="verified-badge"><i class="fa-solid fa-circle-check"></i> Verified Member</span>
+                        <button class="helpful-btn" onclick="toggleHelpful(this)"><i class="fa-regular fa-thumbs-up"></i> Helpful (<span>12</span>)</button>
                     </div>
                 </div>
             </div>
 
-            <div class="testimonial-card">
+            <!-- Feedback 3 -->
+            <div class="feedback-card" data-category="KIRDAR">
                 <div>
-                    <i class="fa-solid fa-quote-left quote-icon"></i>
-                    <div class="rating-stars">
-                        <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                    <div class="card-top">
+                        <span class="program-tag">Workshop Feedback</span>
+                        <div class="rating-stars">
+                            <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-regular fa-star"></i>
+                        </div>
                     </div>
-                    <div class="testimonial-text">
-                        "JazakAllahu Khairan for such an informative and engaging session! 🌸 The kids truly enjoyed it. The Kahoot was exciting and your clear explanations made everything easy to understand."
+                    <div class="feedback-text">
+                        <p>"Ap ka content bohat zabardast hota ha and topic b bilkul amaze krnay wala hota ha ma sha Allah but i feel during workshop ap questions bohat krti hain n explaination kam hoti ha sometimes audiance zayada sounana chahti ha mazeed clarifications k liy i think thori zayada detail honi chaeiy"</p>
                     </div>
                 </div>
-                <div class="testimonial-author">
-                    <div class="author-avatar">M</div>
-                    <div class="author-info">
-                        <h4>Maryum Akram</h4>
-                        <span>Leaders' Loom Member</span>
+                <div>
+                    <div class="feedback-author">
+                        <div class="author-avatar">C</div>
+                        <div class="author-info">
+                            <h4>Community Member</h4>
+                            <span>Constructive Feedback</span>
+                        </div>
+                    </div>
+                    <div class="card-actions">
+                        <span class="verified-badge"><i class="fa-solid fa-circle-check"></i> Verified Member</span>
+                        <button class="helpful-btn" onclick="toggleHelpful(this)"><i class="fa-regular fa-thumbs-up"></i> Helpful (<span>7</span>)</button>
                     </div>
                 </div>
             </div>
 
-            <div class="testimonial-card">
+            <!-- Voice Feedback 1 -->
+            <div class="feedback-card" data-category="1-on-1 Sessions">
                 <div>
-                    <i class="fa-solid fa-quote-left quote-icon"></i>
-                    <div class="rating-stars">
-                        <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                    <div class="card-top">
+                        <span class="program-tag">1-on-1 Sessions</span>
+                        <div class="rating-stars">
+                            <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                        </div>
                     </div>
-                    <div class="testimonial-text">
-                        "Very nice, Jazakallah! Looking forward to another wonderful session."
+                    <span class="audio-tag"><i class="fa-solid fa-microphone"></i> Voice Note</span>
+                    <div class="feedback-text">
+                        <p>"Musfirah, bohot achha session raha aapka. Activity mind ko jhanjhodne wali aur bohot achhi thi. Allah aapke ilm mein barakat de."</p>
+                        <p>"Ghar mein likhne ka time nahi milta is liye voice mein feedback de rahi hoon. Main aaj kal apne aap par kaam kar rahi hoon, CCSH ka course kia hua hai."</p>
+                        <p>"Main chahti hoon ke apne aap ko grow karoon, revision ho aur cheezein implement karoon. Chahe baby steps se shuru karoon, apna kuch na kuch start karna chahti hoon."</p>
                     </div>
                 </div>
-                <div class="testimonial-author">
-                    <div class="author-avatar">Z</div>
-                    <div class="author-info">
-                        <h4>Zunaira Fahad</h4>
-                        <span>Leaders' Loom Member</span>
+                <div>
+                    <div class="feedback-author">
+                        <div class="author-avatar">A</div>
+                        <div class="author-info">
+                            <h4>Anonymous Participant</h4>
+                            <span>Mindset & Personal Growth Session</span>
+                        </div>
+                    </div>
+                    <div class="card-actions">
+                        <span class="verified-badge"><i class="fa-solid fa-circle-check"></i> Verified Voice Note</span>
+                        <button class="helpful-btn" onclick="toggleHelpful(this)"><i class="fa-regular fa-thumbs-up"></i> Helpful (<span>22</span>)</button>
                     </div>
                 </div>
             </div>
 
-            <div class="testimonial-card">
+            <!-- Voice Feedback 2 -->
+            <div class="feedback-card" data-category="KIRDAR">
                 <div>
-                    <i class="fa-solid fa-quote-left quote-icon"></i>
-                    <div class="rating-stars">
-                        <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                    <div class="card-top">
+                        <span class="program-tag">KIRDAR</span>
+                        <div class="rating-stars">
+                            <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                        </div>
                     </div>
-                    <div class="testimonial-text">
-                        "Alhamdulillah, today's Surah Fatiha session for kids was truly beneficial. 🌸 The teacher kept the children engaged through interactive discussions and simple explanations."
+                    <span class="audio-tag"><i class="fa-solid fa-microphone"></i> Voice Note Reflections</span>
+                    <div class="feedback-text">
+                        <p>"Jo Kirdaar ki workshop main ne attend ki, us mein 4 sessions thay. Overall mera experience achha raha, main ne kuch cheezein seekhein aur implement karne ki koshish kar rahi hoon."</p>
+                        <p><strong>1. Responsive Behavior:</strong> "Har baat par agad-fagadd react karne ki bajaye responsive behavior rakhna hai. Incident ke waqt sabar aur khamoshi se kaam lein aur baad mein soch samajh kar response dein."</p>
+                        <p><strong>2. Inner Personality:</strong> "Kirdaar zahiri personality nahi balke inner personality ko reflect karta hai. Hum ziada din pretend nahi kar sakte, actual kirdaar samne aa hi jata hai."</p>
+                        <p><strong>3. Allah Ki Amaanat:</strong> "Har cheez ko Allah ki amaanat samajhte hue apna kirdaar ada karna hai. Is se ghalti par ruju karna, dusron se maafee maangna aur ghalti sudharna aasan ho jata hai."</p>
+                        <p><em>"Dua hai ke Allah Ta'ala humein seekhi hui baatein apni zindagi mein implement karne ki taufeeq de. Aameen."</em></p>
                     </div>
                 </div>
-                <div class="testimonial-author">
-                    <div class="author-avatar">S</div>
-                    <div class="author-info">
-                        <h4>Sidra Arshad</h4>
-                        <span>Parent & Community Member</span>
+                <div>
+                    <div class="feedback-author">
+                        <div class="author-avatar">K</div>
+                        <div class="author-info">
+                            <h4>Kirdaar Workshop Student</h4>
+                            <span>4-Session Workshop Graduate</span>
+                        </div>
+                    </div>
+                    <div class="card-actions">
+                        <span class="verified-badge"><i class="fa-solid fa-circle-check"></i> Verified Voice Note</span>
+                        <button class="helpful-btn" onclick="toggleHelpful(this)"><i class="fa-regular fa-thumbs-up"></i> Helpful (<span>35</span>)</button>
                     </div>
                 </div>
             </div>
 
-            <div class="testimonial-card">
+            <!-- Feedback 4 -->
+            <div class="feedback-card" data-category="1-on-1 Sessions">
                 <div>
-                    <i class="fa-solid fa-quote-left quote-icon"></i>
-                    <div class="rating-stars">
-                        <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                    <div class="card-top">
+                        <span class="program-tag">1-on-1 Sessions</span>
+                        <div class="rating-stars">
+                            <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                        </div>
                     </div>
-                    <div class="testimonial-text">
-                        "Allah subhana o ta'ala AP ko bhot bhot jaza e kher den. Bhot hi zaberdest session tha. Sb sy achi bat k ap ny bhot hi pur hikmat our peyary andaz sy bachon ko track py rkha."
+                    <div class="feedback-text">
+                        <p>"It was good and helpful. I was able to see new perspectives of positive thinking. The goal we worked on was able to achieve alhamdulillah."</p>
                     </div>
                 </div>
-                <div class="testimonial-author">
-                    <div class="author-avatar">S</div>
-                    <div class="author-info">
-                        <h4>Sumeera Usman</h4>
-                        <span>Leaders' Loom Member</span>
+                <div>
+                    <div class="feedback-author">
+                        <div class="author-avatar">C</div>
+                        <div class="author-info">
+                            <h4>Client Feedback</h4>
+                            <span>Perspective Transformation Session</span>
+                        </div>
+                    </div>
+                    <div class="card-actions">
+                        <span class="verified-badge"><i class="fa-solid fa-circle-check"></i> Verified Member</span>
+                        <button class="helpful-btn" onclick="toggleHelpful(this)"><i class="fa-regular fa-thumbs-up"></i> Helpful (<span>12</span>)</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Feedback 5 -->
+            <div class="feedback-card" data-category="Wisdom Weavers">
+                <div>
+                    <div class="card-top">
+                        <span class="program-tag">Wisdom Weavers</span>
+                        <div class="rating-stars">
+                            <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                        </div>
+                    </div>
+                    <div class="feedback-text">
+                        <p>"JazakAllahu Khairan for such an informative and engaging session! 🌸 The kids truly enjoyed it. The Kahoot was exciting and your clear explanations made everything easy to understand."</p>
+                    </div>
+                </div>
+                <div>
+                    <div class="feedback-author">
+                        <div class="author-avatar">M</div>
+                        <div class="author-info">
+                            <h4>Maryum Akram</h4>
+                            <span>Leaders' Loom Member</span>
+                        </div>
+                    </div>
+                    <div class="card-actions">
+                        <span class="verified-badge"><i class="fa-solid fa-circle-check"></i> Verified Member</span>
+                        <button class="helpful-btn" onclick="toggleHelpful(this)"><i class="fa-regular fa-thumbs-up"></i> Helpful (<span>24</span>)</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Feedback 6 -->
+            <div class="feedback-card" data-category="Parenting">
+                <div>
+                    <div class="card-top">
+                        <span class="program-tag">Parenting</span>
+                        <div class="rating-stars">
+                            <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                        </div>
+                    </div>
+                    <div class="feedback-text">
+                        <p>"Allah subhana o ta'ala AP ko bhot bhot jaza e kher den. Bhot hi zaberdest session tha. Sb sy achi bat k ap ny bhot hi pur hikmat our peyary andaz sy bachon ko track py rkha."</p>
+                    </div>
+                </div>
+                <div>
+                    <div class="feedback-author">
+                        <div class="author-avatar">S</div>
+                        <div class="author-info">
+                            <h4>Sumeera Usman</h4>
+                            <span>Leaders' Loom Member</span>
+                        </div>
+                    </div>
+                    <div class="card-actions">
+                        <span class="verified-badge"><i class="fa-solid fa-circle-check"></i> Verified Member</span>
+                        <button class="helpful-btn" onclick="toggleHelpful(this)"><i class="fa-regular fa-thumbs-up"></i> Helpful (<span>31</span>)</button>
                     </div>
                 </div>
             </div>
@@ -1296,7 +1588,7 @@
         </div>
     </section>
 
-    <!-- Modal Detail Popup -->
+    <!-- Program Detail Modal -->
     <div class="modal-overlay" id="programModal" onclick="closeModalOnOuter(event)">
         <div class="modal-content">
             <button class="close-modal" onclick="closeModal()"><i class="fa-solid fa-xmark"></i></button>
@@ -1311,9 +1603,7 @@
             </div>
             <div class="modal-body">
                 <div class="meta-box" id="modalMeta"></div>
-
                 <p id="modalDescription" style="color: #475569; font-size: 0.95rem;"></p>
-                
                 <h4>Key Highlights & Features:</h4>
                 <ul id="modalHighlights"></ul>
 
@@ -1323,6 +1613,36 @@
                     </a>
                 </div>
             </div>
+        </div>
+    </div>
+
+    <!-- Share Feedback Submission Modal -->
+    <div class="modal-overlay" id="feedbackModal">
+        <div class="modal-content" style="max-width: 550px;">
+            <button class="close-modal" onclick="closeFeedbackModal()"><i class="fa-solid fa-xmark"></i></button>
+            <h3 style="margin-bottom: 0.5rem; color: var(--dark);">Share Your Feedback</h3>
+            <p style="font-size: 0.85rem; color: #64748B; margin-bottom: 1.5rem;">Your thoughts help us improve and inspire others in our community.</p>
+
+            <form id="newFeedbackForm" onsubmit="handleFormSubmit(event)">
+                <div class="form-group">
+                    <label>Your Name</label>
+                    <input type="text" id="authorName" placeholder="e.g. Fatima Ali" required>
+                </div>
+                <div class="form-group">
+                    <label>Program / Workshop Attended</label>
+                    <select id="programSelect" required>
+                        <option value="Wisdom Weavers">Wisdom Weavers</option>
+                        <option value="1-on-1 Sessions">1-on-1 Sessions</option>
+                        <option value="KIRDAR">KIRDAR - The Mirror Within</option>
+                        <option value="Parenting">Parenting Strategy</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label>Your Feedback / Review</label>
+                    <textarea id="feedbackComment" rows="4" placeholder="Write your experience here..." required></textarea>
+                </div>
+                <button type="submit" class="btn" style="width: 100%;">Submit via WhatsApp <i class="fa-brands fa-whatsapp"></i></button>
+            </form>
         </div>
     </div>
 
@@ -1349,6 +1669,8 @@
     </footer>
 
     <script>
+        const MUSFIRAH_WHATSAPP_NUMBER = "923350253872";
+
         // Mobile Navigation Handlers
         function toggleMobileMenu() {
             const navLinks = document.getElementById('navLinks');
@@ -1373,58 +1695,6 @@
             navLinks.classList.remove('active');
             navOverlay.classList.remove('active');
             menuIcon.className = 'fa-solid fa-bars';
-        }
-
-        // Automatic Video Scroll-Play Script using Intersection Observer
-        document.addEventListener('DOMContentLoaded', () => {
-            const video = document.getElementById('scrollVideo');
-
-            if (video) {
-                // Ensure video is muted initially (required for mobile & desktop autoplay policies)
-                video.muted = true;
-
-                const observerOptions = {
-                    root: null,
-                    rootMargin: '0px',
-                    threshold: 0.25 // Trigger play when 25% of the video is visible in viewport
-                };
-
-                const videoObserver = new IntersectionObserver((entries) => {
-                    entries.forEach(entry => {
-                        if (entry.isIntersecting) {
-                            const playPromise = video.play();
-                            if (playPromise !== undefined) {
-                                playPromise.catch(error => {
-                                    console.log('Autoplay prevented by browser policy:', error);
-                                });
-                            }
-                        } else {
-                            if (!video.paused) {
-                                video.pause();
-                            }
-                        }
-                    });
-                }, observerOptions);
-
-                videoObserver.observe(video);
-            }
-        });
-
-        // Unmute / Mute Audio Toggle Handler
-        function toggleMute() {
-            const video = document.getElementById('scrollVideo');
-            const icon = document.getElementById('soundIcon');
-            const text = document.getElementById('soundText');
-
-            if (video.muted) {
-                video.muted = false;
-                icon.className = 'fa-solid fa-volume-high';
-                text.innerText = 'Mute Sound';
-            } else {
-                video.muted = true;
-                icon.className = 'fa-solid fa-volume-xmark';
-                text.innerText = 'Unmute Sound';
-            }
         }
 
         // Program Data Details
@@ -1480,8 +1750,6 @@
                 ]
             },
             'kirdar': {
-
-                
                 title: 'KIRDAR - The Mirror Within',
                 tag: 'Belief Transformation Program',
                 img: 'https://miro.medium.com/v2/resize:fit:720/format:webp/1*TSJ5NlQ3Y7e-HrrowHQFiQ.png',
@@ -1537,6 +1805,110 @@
             if (event.target.id === 'programModal') {
                 closeModal();
             }
+        }
+
+        // Feedback Hub Functions
+        function openFeedbackModal() {
+            document.getElementById('feedbackModal').style.display = 'flex';
+        }
+
+        function closeFeedbackModal() {
+            document.getElementById('feedbackModal').style.display = 'none';
+        }
+
+        function toggleHelpful(btn) {
+            const countSpan = btn.querySelector('span');
+            let currentCount = parseInt(countSpan.innerText);
+
+            if (btn.classList.contains('liked')) {
+                btn.classList.remove('liked');
+                countSpan.innerText = currentCount - 1;
+            } else {
+                btn.classList.add('liked');
+                countSpan.innerText = currentCount + 1;
+            }
+        }
+
+        function filterFeedback(category) {
+            const cards = document.querySelectorAll('.feedback-card');
+            const filterBtns = document.querySelectorAll('.filter-pills .filter-btn');
+
+            filterBtns.forEach(btn => btn.classList.remove('active'));
+            event.target.classList.add('active');
+
+            cards.forEach(card => {
+                if (category === 'all' || card.getAttribute('data-category') === category) {
+                    card.style.display = 'flex';
+                } else {
+                    card.style.display = 'none';
+                }
+            });
+        }
+
+        function searchCards() {
+            const input = document.getElementById('searchInput').value.toLowerCase();
+            const cards = document.querySelectorAll('.feedback-card');
+
+            cards.forEach(card => {
+                const text = card.querySelector('.feedback-text').innerText.toLowerCase();
+                const name = card.querySelector('.author-info h4').innerText.toLowerCase();
+                
+                if (text.includes(input) || name.includes(input)) {
+                    card.style.display = 'flex';
+                } else {
+                    card.style.display = 'none';
+                }
+            });
+        }
+
+        function handleFormSubmit(e) {
+            e.preventDefault();
+
+            const name = document.getElementById('authorName').value;
+            const program = document.getElementById('programSelect').value;
+            const comment = document.getElementById('feedbackComment').value;
+            const firstInitial = name.charAt(0).toUpperCase();
+
+            // Insert card into feed
+            const newCardHTML = `
+                <div class="feedback-card" data-category="${program}">
+                    <div>
+                        <div class="card-top">
+                            <span class="program-tag">${program}</span>
+                            <div class="rating-stars">
+                                <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                            </div>
+                        </div>
+                        <div class="feedback-text"><p>"${comment}"</p></div>
+                    </div>
+                    <div>
+                        <div class="feedback-author">
+                            <div class="author-avatar">${firstInitial}</div>
+                            <div class="author-info">
+                                <h4>${name}</h4>
+                                <span>Community Member</span>
+                            </div>
+                        </div>
+                        <div class="card-actions">
+                            <span class="verified-badge"><i class="fa-solid fa-circle-check"></i> Just Submitted</span>
+                            <button class="helpful-btn" onclick="toggleHelpful(this)"><i class="fa-regular fa-thumbs-up"></i> Helpful (<span>0</span>)</button>
+                        </div>
+                    </div>
+                </div>
+            `;
+            document.getElementById('feedbackGrid').insertAdjacentHTML('afterbegin', newCardHTML);
+
+            // Construct WhatsApp message & link
+            const message = `*New Feedback Submitted via Website*\n\n` +
+                            `*Name:* ${name}\n` +
+                            `*Program:* ${program}\n` +
+                            `*Feedback:* "${comment}"`;
+            
+            const whatsappUrl = `https://wa.me/${MUSFIRAH_WHATSAPP_NUMBER}?text=${encodeURIComponent(message)}`;
+
+            closeFeedbackModal();
+            document.getElementById('newFeedbackForm').reset();
+            window.open(whatsappUrl, '_blank');
         }
     </script>
 </body>
